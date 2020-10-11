@@ -3,6 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'newContainer.dart';
 import 'reUse.dart';
 
+Color bottomContainerColor = Colors.pink;
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -55,6 +57,12 @@ class _InputPageState extends State<InputPage> {
                 ),
               ],
             ),
+          ),
+          Container(
+            height: 80.0,
+            width: double.infinity,
+            color: bottomContainerColor,
+            margin: EdgeInsets.only(top: 10.0),
           ),
         ],
       ),
