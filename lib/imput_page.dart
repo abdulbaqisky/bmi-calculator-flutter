@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'newContainer.dart';
+import 'reUse.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -21,26 +23,20 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: NewContainer(
                     colour: Color(0xFF1D1E33),
-                    cardChild: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(FontAwesomeIcons.mars, size: 80.0),
-                        SizedBox(
-                          height: 15.0,
-                        ),
-                        Text(
-                          'MALE',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            color: Color(0XFF8D8E98),
-                          ),
-                        )
-                      ],
+                    cardChild: ReUse(
+                      label: 'MALE',
+                      iconMe: FontAwesomeIcons.mars,
                     ),
                   ),
                 ),
                 Expanded(
-                  child: NewContainer(colour: Color(0xFF1D1E33)),
+                  child: NewContainer(
+                    colour: Color(0xFF1D1E33),
+                    cardChild: ReUse(
+                      label: 'FEMALE',
+                      iconMe: FontAwesomeIcons.venus,
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -65,33 +61,3 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
-
-class NewContainer extends StatelessWidget {
-  NewContainer({@required this.colour, this.cardChild});
-
-  final Color colour;
-  final Widget cardChild;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: cardChild,
-      margin: EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-        color: colour,
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-    );
-  }
-}
-
-/*
-ReUse(
-iconMe: Icon(FontAwesomeIcons.mars),
-what: Text('MALE')),
-class ReUse extends StatelessWidget {
-  ReUse({this.what, this.iconMe});
-
-  final Text what;
-  final Icon iconMe;
-*/
