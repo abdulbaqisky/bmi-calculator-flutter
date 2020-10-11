@@ -19,10 +19,11 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleCardColor = inActiveColor;
-  Color femaleCardColor = inActiveColor;
+  Gender selectedGender;
+  // Color maleCardColor = inActiveColor;
+  // Color femaleCardColor = inActiveColor;
 
-  void updateCard(Gender selectedGender) {
+  /*void updateCard(Gender selectedGender) {
     //male card is pressed
     if (selectedGender == Gender.male) {
       if (maleCardColor == inActiveColor) {
@@ -41,7 +42,7 @@ class _InputPageState extends State<InputPage> {
         maleCardColor = activeColor;
       }
     }
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -58,11 +59,13 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateCard(Gender.male);
+                        selectedGender = Gender.male;
                       });
                     },
                     child: NewContainer(
-                      colour: maleCardColor,
+                      colour: selectedGender == Gender.male
+                          ? activeColor
+                          : inActiveColor,
                       cardChild: ReUse(
                         label: 'MALE',
                         iconMe: FontAwesomeIcons.mars,
@@ -74,11 +77,13 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateCard(Gender.female);
+                        selectedGender = Gender.female;
                       });
                     },
                     child: NewContainer(
-                      colour: femaleCardColor,
+                      colour: selectedGender == Gender.female
+                          ? activeColor
+                          : inActiveColor,
                       cardChild: ReUse(
                         label: 'FEMALE',
                         iconMe: FontAwesomeIcons.venus,
