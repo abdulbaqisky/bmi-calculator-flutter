@@ -112,6 +112,7 @@ class _InputPageState extends State<InputPage> {
                       ),
                     ],
                   ),
+                  //didn't commit well;
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
                       activeTrackColor: Colors.white,
