@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'newContainer.dart';
 import 'reUse.dart';
-
-const bottomContainerHeight = 80.0;
-const bottomContainerColor = Colors.pink;
-const inActiveColor = Color(0xFF1D1E33);
-const activeColor = Color(0xFF111333);
+import 'constants.dart';
 
 enum Gender {
   male,
@@ -20,10 +16,10 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
-  // Color maleCardColor = inActiveColor;
-  // Color femaleCardColor = inActiveColor;
+  /*Color maleCardColor = inActiveColor;
+  Color femaleCardColor = inActiveColor;
 
-  /*void updateCard(Gender selectedGender) {
+  void updateCard(Gender selectedGender) {
     //male card is pressed
     if (selectedGender == Gender.male) {
       if (maleCardColor == inActiveColor) {
@@ -63,8 +59,8 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     colour: selectedGender == Gender.male
-                        ? activeColor
-                        : inActiveColor,
+                        ? kActiveColor
+                        : kInActiveColor,
                     cardChild: ReUse(
                       label: 'MALE',
                       iconMe: FontAwesomeIcons.mars,
@@ -79,8 +75,8 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     colour: selectedGender == Gender.female
-                        ? activeColor
-                        : inActiveColor,
+                        ? kActiveColor
+                        : kInActiveColor,
                     cardChild: ReUse(
                       label: 'FEMALE',
                       iconMe: FontAwesomeIcons.venus,
@@ -91,24 +87,24 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Expanded(
-            child: NewContainer(colour: inActiveColor),
+            child: NewContainer(colour: kInActiveColor),
           ),
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: NewContainer(colour: inActiveColor),
+                  child: NewContainer(colour: kInActiveColor),
                 ),
                 Expanded(
-                  child: NewContainer(colour: inActiveColor),
+                  child: NewContainer(colour: kInActiveColor),
                 ),
               ],
             ),
           ),
           Container(
-            height: bottomContainerHeight,
+            height: kBottomContainerHeight,
             width: double.infinity,
-            color: bottomContainerColor,
+            color: kBottomContainerColor,
             margin: EdgeInsets.only(top: 10.0),
           ),
         ],

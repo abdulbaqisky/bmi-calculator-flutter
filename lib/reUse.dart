@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-
-const labelTextStyle = TextStyle(
-  fontSize: 18.0,
-  color: Color(0XFF8D8E98),
-);
+import 'constants.dart';
 
 class ReUse extends StatelessWidget {
   ReUse({this.label, this.iconMe});
