@@ -56,38 +56,34 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: NewContainer(
+                    onPress: () {
                       setState(() {
                         selectedGender = Gender.male;
                       });
                     },
-                    child: NewContainer(
-                      colour: selectedGender == Gender.male
-                          ? activeColor
-                          : inActiveColor,
-                      cardChild: ReUse(
-                        label: 'MALE',
-                        iconMe: FontAwesomeIcons.mars,
-                      ),
+                    colour: selectedGender == Gender.male
+                        ? activeColor
+                        : inActiveColor,
+                    cardChild: ReUse(
+                      label: 'MALE',
+                      iconMe: FontAwesomeIcons.mars,
                     ),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: NewContainer(
+                    onPress: () {
                       setState(() {
                         selectedGender = Gender.female;
                       });
                     },
-                    child: NewContainer(
-                      colour: selectedGender == Gender.female
-                          ? activeColor
-                          : inActiveColor,
-                      cardChild: ReUse(
-                        label: 'FEMALE',
-                        iconMe: FontAwesomeIcons.venus,
-                      ),
+                    colour: selectedGender == Gender.female
+                        ? activeColor
+                        : inActiveColor,
+                    cardChild: ReUse(
+                      label: 'FEMALE',
+                      iconMe: FontAwesomeIcons.venus,
                     ),
                   ),
                 ),
