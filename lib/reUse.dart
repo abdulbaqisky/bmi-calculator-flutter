@@ -18,7 +18,7 @@ class ReUse extends StatelessWidget {
         ),
         Text(
           label,
-          style: labelTextStyle,
+          style: kLabelTextStyle,
         )
       ],
     );
