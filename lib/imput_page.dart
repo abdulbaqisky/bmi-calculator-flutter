@@ -17,6 +17,7 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 180;
+  int weight = 74;
   /*Color maleCardColor = inActiveColor;
   Color femaleCardColor = inActiveColor;
 
@@ -112,7 +113,6 @@ class _InputPageState extends State<InputPage> {
                       ),
                     ],
                   ),
-                  //didn't commit well;
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
                       activeTrackColor: Colors.white,
@@ -143,7 +143,38 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: NewContainer(colour: kInActiveColor),
+                  child: NewContainer(
+                    colour: kInActiveColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'WEIGHT',
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          weight.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FloatingActionButton(
+                              backgroundColor: Color(0XFF4C4F5E),
+                              child: Icon(Icons.add, color: Colors.white),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            FloatingActionButton(
+                              backgroundColor: Color(0XFF4C4F5E),
+                              child: Icon(Icons.add, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
                 Expanded(
                   child: NewContainer(colour: kInActiveColor),
