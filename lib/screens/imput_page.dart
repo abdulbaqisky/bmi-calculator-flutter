@@ -1,11 +1,11 @@
-import 'package:bmi_calculator/resultPage.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:bmi_calculator/components/bottomButton.dart';
+import 'package:bmi_calculator/components/round_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'newContainer.dart';
-import 'reUse.dart';
-import 'constants.dart';
+import 'package:bmi_calculator/newContainer.dart';
+import 'package:bmi_calculator/constants.dart';
 import 'resultPage.dart';
+import 'package:bmi_calculator/components/reUse.dart';
 
 enum Gender {
   male,
@@ -230,49 +230,19 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          GestureDetector(
+          BottomButton(
+            buttonTitle: 'CALCULATE',
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ResultPage()));
-            },
-            child: Container(
-              child: Center(
-                child: Text(
-                  'CALCULATE',
-                  style: kLargeButtonTextStyle,
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultPage(),
                 ),
-              ),
-              padding: EdgeInsets.only(bottom: 20.0),
-              margin: EdgeInsets.only(top: 10.0),
-              height: kBottomContainerHeight,
-              width: double.infinity,
-              color: kBottomContainerColor,
-            ),
+              );
+            },
           ),
         ],
       ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({@required this.icon, @required this.onPressed});
-
-  final IconData icon;
-  final Function onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(icon),
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      onPressed: onPressed,
-      elevation: 6.0,
-      fillColor: Color(0XFF4C4F5E),
-      shape: CircleBorder(),
     );
   }
 }

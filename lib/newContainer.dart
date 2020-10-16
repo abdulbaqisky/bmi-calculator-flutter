@@ -12,6 +12,7 @@ class NewContainer extends StatelessWidget {
     return GestureDetector(
       onTap: onPress,
       child: Container(
+        alignment: Alignment.center,
         child: cardChild,
         margin: EdgeInsets.all(15.0),
         decoration: BoxDecoration(
